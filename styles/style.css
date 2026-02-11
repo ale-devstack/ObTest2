@@ -1,0 +1,344 @@
+/* ===========================
+   Variables y Reset
+   =========================== */
+:root {
+    --orange-primary: #ff5500;
+    --orange-hover: #ff6a1a;
+    --black: #000000;
+    --white: #FFFFFF;
+    --gray-light: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   Navbar Estilos Base
+   =========================== */
+.navbar {
+    padding: 1.2rem 0;
+    transition: all 0.4s ease-in-out;
+    background-color: transparent;
+    z-index: 1000;
+}
+
+/* Navbar con Scroll */
+.navbar.scrolled {
+    background-color: var(--black) !important;
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   Logo y Marca
+   =========================== */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo-container {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Nombre de la Marca */
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.brand-orange {
+    color: var(--black);
+    transition: color 0.3s ease;
+}
+
+.brand-bee {
+    color: var(--orange-primary);
+}
+
+/* Navbar scrolled - cambio de color en Orange */
+.navbar.scrolled .brand-orange {
+    color: var(--white);
+}
+
+/* Hover Effect en Logo y Nombre */
+.navbar-brand:hover .logo-container {
+    transform: rotate(15deg);
+}
+
+.navbar-brand:hover .brand-name {
+    transform: scale(1.1);
+}
+
+/* ===========================
+   Menú de Navegación
+   =========================== */
+.navbar-nav {
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0 !important;
+}
+
+/* Efecto underline en hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--orange-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--orange-primary) !important;
+}
+
+/* Navbar scrolled - color de links */
+.navbar.scrolled .nav-link {
+    color: var(--white) !important;
+}
+
+.navbar.scrolled .nav-link:hover {
+    color: var(--orange-primary) !important;
+}
+
+/* ===========================
+   CTA Button (Contacto)
+   =========================== */
+.nav-cta {
+    background-color: var(--orange-primary);
+    color: var(--white) !important;
+    padding: 0.6rem 1.8rem !important;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--orange-primary);
+}
+
+.nav-cta::after {
+    display: none;
+}
+
+.nav-cta:hover {
+    background-color: var(--orange-hover);
+    border-color: var(--orange-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+}
+
+/* ===========================
+   Hamburger Menu
+   =========================== */
+.navbar-toggler {
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.navbar.scrolled .hamburger-line {
+    background-color: var(--white);
+}
+
+/* Animación del hamburger cuando está abierto */
+.navbar-toggler.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.navbar-toggler.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ===========================
+   Secciones de Contenido
+   =========================== */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.content-section {
+    min-height: 70vh;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--black);
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+/* Tablet */
+@media (max-width: 991px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    /* Ocultar el nombre en mobile */
+    .brand-name {
+        display: none;
+    }
+
+    .logo-container {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Menu mobile deslizante */
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--black);
+        padding: 80px 30px 30px;
+        transition: right 0.4s ease-in-out;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .navbar-collapse.show {
+        right: 0;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-item {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 0.8rem 0 !important;
+        text-align: left;
+    }
+
+    .nav-cta {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Overlay cuando el menú está abierto */
+    body.menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+/* Mobile pequeño */
+@media (max-width: 576px) {
+    .navbar-collapse {
+        width: 280px;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop grande */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
