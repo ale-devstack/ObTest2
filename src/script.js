@@ -131,4 +131,55 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         navbar.style.opacity = '1';
     }, 100);
+    
+    // Animar números de estadísticas
+    animateStats();
 });
+
+// ===========================
+// Animación de Números de Estadísticas
+// ===========================
+function animateStats() {
+    const stats = document.querySelectorAll('.stat-number[data-target]');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    stats.forEach(stat => observer.observe(stat));
+}
+
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // 2 segundos
+    const increment = target / (duration / 16); // 60 FPS
+    let current = 0;
+    
+    // Determinar el sufijo
+    const statLabel = element.nextElementSibling.textContent;
+    let suffix = '';
+    if (statLabel.includes('Tasa')) {
+        suffix = '%';
+    } else if (statLabel.includes('Empresas')) {
+        suffix = '+';
+    } else if (statLabel.includes('Años')) {
+        suffix = '+';
+    }
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target + suffix;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + suffix;
+        }
+    }, 16);
+}
