@@ -17,6 +17,9 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
@@ -111,10 +114,126 @@
         </div>
     </section>
 
-    <section id="nosotros" class="content-section bg-light">
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="nosotros-section">
         <div class="container">
-            <h2 class="section-title">Nosotros</h2>
-            <p>Contenido de la sección Nosotros...</p>
+            <div class="row g-5 align-items-stretch">
+                <!-- Columna Izquierda: Misión, Visión, Valores -->
+                <div class="col-lg-6">
+                    <div class="principles-container">
+                        <!-- Misión -->
+                        <div class="principle-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="principle-icon">
+                                <i class="bi bi-bullseye"></i>
+                            </div>
+                            <div class="principle-content">
+                                <h3 class="principle-title">Misión</h3>
+                                <p class="principle-text">
+                                    Ayudar a empresas a recuperar su flujo de efectivo a través de procesos éticos, transparentes y basados en tecnología, garantizando resultados medibles y relaciones profesionales de largo plazo.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Visión -->
+                        <div class="principle-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="principle-icon">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            <div class="principle-content">
+                                <h3 class="principle-title">Visión</h3>
+                                <p class="principle-text">
+                                    Ser el aliado estratégico líder en LATAM para la gestión de cartera vencida, reconocidos por transformar la industria mediante innovación tecnológica, ética inquebrantable y resultados sostenibles.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Valores -->
+                        <div class="principle-card values-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="principle-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <div class="principle-content">
+                                <h3 class="principle-title">Valores</h3>
+                                <div class="values-grid">
+                                    <div class="value-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Ética y transparencia</span>
+                                    </div>
+                                    <div class="value-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Orientación a resultados</span>
+                                    </div>
+                                    <div class="value-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Profesionalismo constante</span>
+                                    </div>
+                                    <div class="value-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Innovación tecnológica</span>
+                                    </div>
+                                    <div class="value-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Trazabilidad total</span>
+                                    </div>
+                                    <div class="value-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Cumplimiento normativo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Sobre OrangeBee + Imagen -->
+                <div class="col-lg-6">
+                    <div class="about-content" data-aos="fade-left">
+                        <div class="section-badge">
+                            <i class="bi bi-info-circle"></i>
+                            <span>Conócenos</span>
+                        </div>
+                        <h2 class="section-title-main">Sobre OrangeBee</h2>
+                        <div class="about-text">
+                            <p class="lead-text">
+                                Nacimos de la necesidad de transformar la recuperación de cartera en México y LATAM, combinando tecnología financiera de vanguardia con un enfoque humano y ético.
+                            </p>
+                            <p>
+                                En OrangeBee entendemos que detrás de cada cuenta por cobrar hay relaciones comerciales que proteger y flujos de efectivo que optimizar. Por eso, desarrollamos soluciones tecnológicas que permiten a las empresas recuperar su cartera sin comprometer sus valores ni su reputación.
+                            </p>
+                            <p>
+                                Nuestro equipo combina experiencia en finanzas, tecnología y gestión de cobranza para ofrecer servicios profesionales con trazabilidad completa, reporting en tiempo real y cumplimiento total de la normativa vigente.
+                            </p>
+                        </div>
+
+                        <!-- Imagen -->
+                        <div class="about-image-container">
+                            <img src="../img/nosotros-fintech.jpg" alt="Equipo OrangeBee - Tecnología Fintech" class="about-image">
+                            <div class="image-overlay">
+                                <div class="overlay-stat">
+                                    <span class="stat-number">15+</span>
+                                    <span class="stat-label">Años de experiencia</span>
+                                </div>
+                                <div class="overlay-stat">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-label">Empresas confían en nosotros</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="about-cta">
+                            <a href="#contacto" class="btn-primary-about">
+                                <i class="bi bi-calendar-check"></i>
+                                Agenda una consultoría gratuita
+                            </a>
+                            <a href="#servicios" class="btn-secondary-about">
+                                <i class="bi bi-arrow-right-circle"></i>
+                                Ver nuestros servicios
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -141,6 +260,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS (Animate On Scroll) JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script src="./src/script.js"></script>
 </body>

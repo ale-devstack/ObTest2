@@ -134,6 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Animar números de estadísticas
     animateStats();
+    
+    // Inicializar AOS (Animate On Scroll)
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out',
+        once: true,
+        offset: 100
+    });
 });
 
 // ===========================
