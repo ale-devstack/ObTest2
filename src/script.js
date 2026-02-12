@@ -155,11 +155,14 @@ function initServicesCarousel() {
     const indicators = document.querySelectorAll('.indicator');
     const prevBtn = document.getElementById('prevService');
     const nextBtn = document.getElementById('nextService');
+    const carouselContainer = document.querySelector('.servicios-carousel');
     
     if (!cards.length) return;
     
     let currentSlide = 0;
     let autoPlayInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
     
     function showSlide(index) {
         // Remove active class from all cards and indicators
@@ -205,6 +208,38 @@ function initServicesCarousel() {
         clearInterval(autoPlayInterval);
     }
     
+    function handleGesture() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left - next slide
+            nextSlide();
+            stopAutoPlay();
+            startAutoPlay();
+        }
+        if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right - prev slide
+            prevSlide();
+            stopAutoPlay();
+            startAutoPlay();
+        }
+    }
+    
+    // Touch events para swipe en mobile
+    if (carouselContainer) {
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleGesture();
+        }, { passive: true });
+        
+        // Pausar autoplay cuando el mouse está sobre el carrusel
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+    }
+    
     // Event listeners para botones
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
@@ -230,13 +265,6 @@ function initServicesCarousel() {
             startAutoPlay(); // Reiniciar autoplay
         });
     });
-    
-    // Pausar autoplay cuando el mouse está sobre el carrusel
-    const carouselContainer = document.querySelector('.servicios-carousel-container');
-    if (carouselContainer) {
-        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-        carouselContainer.addEventListener('mouseleave', startAutoPlay);
-    }
     
     // Iniciar autoplay
     startAutoPlay();
