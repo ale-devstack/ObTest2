@@ -142,7 +142,108 @@ document.addEventListener('DOMContentLoaded', () => {
         once: true,
         offset: 100
     });
+    
+    // Inicializar carrusel de servicios
+    initServicesCarousel();
 });
+
+// ===========================
+// Carrusel de Servicios
+// ===========================
+function initServicesCarousel() {
+    const cards = document.querySelectorAll('.service-card');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.getElementById('prevService');
+    const nextBtn = document.getElementById('nextService');
+    
+    if (!cards.length) return;
+    
+    let currentSlide = 0;
+    let autoPlayInterval;
+    
+    function showSlide(index) {
+        // Remove active class from all cards and indicators
+        cards.forEach(card => {
+            card.classList.remove('active');
+        });
+        indicators.forEach(indicator => {
+            indicator.classList.remove('active');
+        });
+        
+        // Add active class to current slide
+        if (cards[index]) {
+            cards[index].classList.add('active');
+        }
+        if (indicators[index]) {
+            indicators[index].classList.add('active');
+        }
+        
+        currentSlide = index;
+    }
+    
+    function nextSlide() {
+        let next = currentSlide + 1;
+        if (next >= cards.length) {
+            next = 0;
+        }
+        showSlide(next);
+    }
+    
+    function prevSlide() {
+        let prev = currentSlide - 1;
+        if (prev < 0) {
+            prev = cards.length - 1;
+        }
+        showSlide(prev);
+    }
+    
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 6000); // Cambio cada 6 segundos
+    }
+    
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+    
+    // Event listeners para botones
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoPlay();
+            startAutoPlay(); // Reiniciar autoplay
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoPlay();
+            startAutoPlay(); // Reiniciar autoplay
+        });
+    }
+    
+    // Event listeners para indicadores
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoPlay();
+            startAutoPlay(); // Reiniciar autoplay
+        });
+    });
+    
+    // Pausar autoplay cuando el mouse está sobre el carrusel
+    const carouselContainer = document.querySelector('.servicios-carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+    }
+    
+    // Iniciar autoplay
+    startAutoPlay();
+    
+    // Mostrar primera slide
+    showSlide(0);
+}
 
 // ===========================
 // Animación de Números de Estadísticas
