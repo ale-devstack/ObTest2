@@ -825,6 +825,259 @@ body {
     background: rgba(255, 85, 0, 0.6);
     transform: scale(1.2);
 }
+/* ===========================
+   Sección Nuestro Proceso - Acordeón
+   =========================== */
+.proceso-section {
+    padding: 100px 0;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.proceso-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 85, 0, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Columna Izquierda - Info Sticky */
+.proceso-info {
+    position: sticky;
+    top: 100px;
+}
+
+.proceso-info .section-badge {
+    background: rgba(255, 85, 0, 0.08);
+    border-color: rgba(255, 85, 0, 0.2);
+}
+
+.proceso-info .section-title-main {
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.proceso-intro {
+    font-size: 1.05rem;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+/* Stats */
+.proceso-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(255, 85, 0, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 85, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--orange-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+}
+
+/* Columna Derecha - Acordeones */
+.proceso-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Item del Acordeón */
+.proceso-accordion-item {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 249, 249, 1) 100%);
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.proceso-accordion-item:hover {
+    border-color: rgba(255, 85, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 85, 0, 0.1);
+}
+
+.proceso-accordion-item.active {
+    border-color: var(--orange-primary);
+    box-shadow: 0 8px 25px rgba(255, 85, 0, 0.15);
+}
+
+/* Header del Acordeón */
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.accordion-header:hover {
+    background: rgba(255, 85, 0, 0.03);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 1;
+}
+
+.step-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--orange-primary);
+    min-width: 40px;
+}
+
+.step-icon-small {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--orange-primary), var(--orange-hover));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.step-icon-small i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.accordion-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: 0;
+}
+
+.accordion-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 85, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.accordion-toggle i {
+    font-size: 1.3rem;
+    color: var(--orange-primary);
+    transition: transform 0.3s ease;
+}
+
+.proceso-accordion-item.active .accordion-toggle {
+    background: var(--orange-primary);
+}
+
+.proceso-accordion-item.active .accordion-toggle i {
+    color: var(--white);
+    transform: rotate(180deg);
+}
+
+/* Content del Acordeón */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 2rem;
+}
+
+.proceso-accordion-item.active .accordion-content {
+    max-height: 500px;
+    padding: 0 2rem 1.5rem;
+}
+
+.accordion-description {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.accordion-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.accordion-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 500;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 85, 0, 0.04);
+    border-radius: 8px;
+}
+
+.accordion-features li i {
+    color: var(--orange-primary);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* CTA Bottom */
+.proceso-cta-bottom {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn-cta-proceso {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1.2rem 2.5rem;
+    background: linear-gradient(135deg, var(--orange-primary), var(--orange-hover));
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 25px rgba(255, 85, 0, 0.3);
+}
+
+.btn-cta-proceso:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(255, 85, 0, 0.4);
+    color: var(--white);
+}
+
+.btn-cta-proceso i {
+    font-size: 1.3rem;
+}
 
 /* ===========================
    Secciones de Contenido
@@ -1040,6 +1293,103 @@ body {
     .carousel-indicators {
         bottom: -50px;
     }
+    
+    /* Proceso Section Tablet */
+    .proceso-section {
+        padding: 70px 0;
+    }
+    
+    .proceso-info {
+        position: relative;
+        top: 0;
+        margin-bottom: 3rem;
+    }
+    
+    .proceso-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .accordion-header {
+        padding: 1.3rem 1.5rem;
+    }
+    
+    .step-num {
+        font-size: 1.3rem;
+        min-width: 35px;
+    }
+    
+    .step-icon-small {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .step-icon-small i {
+        font-size: 1.3rem;
+    }
+    
+    .accordion-title {
+        font-size: 1.2rem;
+    }
+    
+    .proceso-accordion-item.active .accordion-content {
+        padding: 0 1.5rem 1.3rem;
+    }
+    
+    /* Proceso Section Tablet */
+    .proceso-section {
+        padding: 70px 0;
+    }
+    
+    .proceso-intro {
+        position: relative;
+        top: 0;
+        margin-bottom: 3rem;
+    }
+    
+    .proceso-stats {
+        margin-top: 2rem;
+    }
+    
+    .accordion-header {
+        padding: 1.5rem 1.5rem;
+        gap: 1.2rem;
+    }
+    
+    .accordion-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .accordion-title {
+        font-size: 1.2rem;
+    }
+    
+    .accordion-toggle {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .accordion-content {
+        padding: 0 1.5rem;
+    }
+    
+    .accordion-item.active .accordion-content {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
 }
 
 /* Tablet Medio - Ajustes adicionales */
@@ -1103,6 +1453,28 @@ body {
     .service-description {
         font-size: 0.95rem;
         margin-bottom: 1.5rem;
+    }
+    
+    /* Proceso Section Tablet Medio */
+    .proceso-intro {
+        margin-bottom: 2.5rem;
+    }
+    
+    .proceso-intro-text {
+        font-size: 1rem;
+    }
+    
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .stat-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 1.6rem;
     }
 }
 
@@ -1421,3 +1793,701 @@ body {
     .indicator.active {
         width: 30px;
     }
+    
+    /* Proceso Section Mobile */
+    .proceso-section {
+        padding: 50px 0;
+    }
+    
+    .proceso-intro {
+        margin-bottom: 2.5rem;
+    }
+    
+    .proceso-intro-text {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .proceso-stats {
+        margin-top: 2rem;
+        gap: 1.2rem;
+    }
+    
+    .proceso-stat-item {
+        padding: 1rem;
+    }
+    
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .stat-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
+    }
+    
+    .accordion-header {
+        padding: 1.2rem 1rem;
+        gap: 1rem;
+    }
+    
+    .accordion-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .accordion-title {
+        font-size: 1.1rem;
+    }
+    
+    .accordion-toggle {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .accordion-toggle i {
+        font-size: 1rem;
+    }
+    
+    .accordion-content {
+        padding: 0 1rem;
+    }
+    
+    .accordion-item.active .accordion-content {
+        padding: 0 1rem 1.2rem 1rem;
+        max-height: 600px;
+    }
+    
+    .accordion-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .accordion-features li {
+        font-size: 0.85rem;
+    }
+    
+    .accordion-features li i {
+        font-size: 1rem;
+    }
+
+
+@media (min-width: 577px) and (max-width: 768px) {
+    /* Proceso Section Tablet Medio */
+    .proceso-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Proceso Section Mobile */
+    .proceso-section {
+        padding: 50px 0;
+    }
+    
+    .proceso-info {
+        margin-bottom: 2.5rem;
+    }
+    
+    .proceso-intro {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .proceso-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.6rem;
+    }
+    
+    .accordion-header {
+        padding: 1.2rem 1rem;
+    }
+    
+    .header-left {
+        gap: 0.8rem;
+    }
+    
+    .step-num {
+        font-size: 1.2rem;
+        min-width: 30px;
+    }
+    
+    .step-icon-small {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .step-icon-small i {
+        font-size: 1.2rem;
+    }
+    
+    .accordion-title {
+        font-size: 1rem;
+    }
+    
+    .accordion-toggle {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .accordion-toggle i {
+        font-size: 1.1rem;
+    }
+    
+    .proceso-accordion-item.active .accordion-content {
+        padding: 0 1rem 1.2rem;
+    }
+    
+    .accordion-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .accordion-features li {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .accordion-features li i {
+        font-size: 1rem;
+    }
+    
+    .btn-cta-proceso {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* ===========================
+   Sección CTA - ¿Listo para Recuperar?
+   =========================== */
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--orange-primary), var(--orange-hover));
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.cta-description {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.btn-cta-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1.3rem 3rem;
+    background: var(--black);
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-cta-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.9);
+    color: var(--white);
+}
+
+.btn-cta-main i {
+    font-size: 1.4rem;
+}
+
+/* ===========================
+   Sección Contacto
+   =========================== */
+.contacto-section {
+    padding: 100px 0;
+    background: var(--white);
+    position: relative;
+}
+
+.contacto-header {
+    margin-bottom: 4rem;
+}
+
+.contacto-header .section-title-main {
+    color: var(--black);
+}
+
+.contacto-subtitle {
+    font-size: 1.05rem;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 1rem;
+}
+
+/* Información de Contacto */
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--orange-primary), var(--orange-hover));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-icon i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.info-text {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0.2rem 0;
+}
+
+.info-text-small {
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0.2rem 0;
+}
+
+/* Redes Sociales en Contacto */
+.contacto-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: var(--orange-primary);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* Formulario de Contacto */
+.contacto-form {
+    background: linear-gradient(135deg, rgba(249, 249, 249, 0.95) 0%, var(--white) 100%);
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.form-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--orange-primary);
+    box-shadow: 0 0 0 3px rgba(255, 85, 0, 0.1);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-form-submit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, var(--orange-primary), var(--orange-hover));
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 25px rgba(255, 85, 0, 0.3);
+}
+
+.btn-form-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(255, 85, 0, 0.4);
+}
+
+.btn-form-submit i {
+    font-size: 1.3rem;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.footer-section {
+    background: #1a1a1a;
+    color: rgba(255, 255, 255, 0.8);
+    padding-top: 60px;
+}
+
+.footer-content {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-widget {
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-social-link:hover {
+    background: var(--orange-primary);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--orange-primary);
+    transform: translateX(5px);
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.footer-contact i {
+    color: var(--orange-primary);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    padding: 30px 0;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+.footer-legal {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--orange-primary);
+}
+
+.footer-legal .separator {
+    margin: 0 1rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+    /* CTA, Contacto y Footer - Tablet */
+    .cta-title {
+        font-size: 2.2rem;
+    }
+    
+    .cta-description {
+        font-size: 1.05rem;
+    }
+    
+    .contacto-section {
+        padding: 70px 0;
+    }
+    
+    .contacto-header {
+        margin-bottom: 3rem;
+    }
+    
+    .contacto-form {
+        padding: 2rem;
+    }
+    
+    .footer-legal {
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+
+@media (min-width: 577px) and (max-width: 768px) {
+    /* CTA - Tablet Medio */
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .btn-cta-main {
+        padding: 1.1rem 2.5rem;
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* CTA Mobile */
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .cta-title {
+        font-size: 1.8rem;
+    }
+    
+    .cta-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cta-description br {
+        display: none;
+    }
+    
+    .btn-cta-main {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    /* Contacto Mobile */
+    .contacto-section {
+        padding: 50px 0;
+    }
+    
+    .contacto-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .contacto-subtitle br {
+        display: none;
+    }
+    
+    .contacto-info {
+        margin-bottom: 2.5rem;
+        gap: 1.5rem;
+    }
+    
+    .info-item {
+        gap: 1rem;
+    }
+    
+    .info-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .info-icon i {
+        font-size: 1.3rem;
+    }
+    
+    .info-title {
+        font-size: 1.1rem;
+    }
+    
+    .info-text {
+        font-size: 0.95rem;
+    }
+    
+    .contacto-form {
+        padding: 1.5rem;
+    }
+    
+    .btn-form-submit {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    /* Footer Mobile */
+    .footer-section {
+        padding-top: 40px;
+    }
+    
+    .footer-brand {
+        font-size: 1.5rem;
+    }
+    
+    .footer-description {
+        font-size: 0.9rem;
+    }
+    
+    .footer-widget {
+        margin-bottom: 2rem;
+    }
+    
+    .footer-bottom {
+        padding: 20px 0;
+    }
+    
+    .footer-copyright {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        text-align: center;
+    }
+}

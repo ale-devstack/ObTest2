@@ -145,7 +145,36 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Inicializar carrusel de servicios
     initServicesCarousel();
+    
+    // Inicializar acordeón de proceso
+    initProcesoAccordion();
 });
+
+// ===========================
+// Acordeón de Proceso
+// ===========================
+function initProcesoAccordion() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    if (!accordionHeaders.length) return;
+    
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const accordionItem = header.parentElement;
+            const isActive = accordionItem.classList.contains('active');
+            
+            // Cerrar todos los items
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Abrir el item clickeado si no estaba activo
+            if (!isActive) {
+                accordionItem.classList.add('active');
+            }
+        });
+    });
+}
 
 // ===========================
 // Carrusel de Servicios
@@ -319,4 +348,22 @@ function animateCounter(element) {
             element.textContent = Math.floor(current) + suffix;
         }
     }, 16);
+}
+
+// ===========================
+// Toggle Accordion (Proceso)
+// ===========================
+function toggleAccordion(header) {
+    const item = header.closest('.proceso-accordion-item');
+    const isActive = item.classList.contains('active');
+    
+    // Cerrar todos los acordeones
+    document.querySelectorAll('.proceso-accordion-item').forEach(accordionItem => {
+        accordionItem.classList.remove('active');
+    });
+    
+    // Si no estaba activo, abrirlo
+    if (!isActive) {
+        item.classList.add('active');
+    }
 }

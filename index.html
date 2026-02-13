@@ -355,26 +355,408 @@
         </div>
     </section>
 
-    <section id="beneficios" class="content-section">
+    <!-- Sección Nuestro Proceso -->
+    <section id="proceso" class="proceso-section">
         <div class="container">
-            <h2 class="section-title">Servicios</h2>
-            <p>Contenido de la sección Servicios...</p>
+            <div class="row g-5 align-items-start">
+                <!-- Columna Izquierda: Título y Descripción -->
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="proceso-info sticky-top">
+                        <div class="section-badge">
+                            <i class="bi bi-diagram-3"></i>
+                            <span>Nuestro Proceso</span>
+                        </div>
+                        <h2 class="section-title-main">Recuperación en 4 pasos simples</h2>
+                        <p class="proceso-intro">
+                            Un proceso probado que maximiza resultados mientras mantiene relaciones comerciales sólidas. Cada paso está diseñado para optimizar la recuperación con tecnología y profesionalismo.
+                        </p>
+                        <div class="proceso-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">95%</div>
+                                <div class="stat-label">Tasa de recuperación</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">48h</div>
+                                <div class="stat-label">Tiempo de respuesta</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Monitoreo continuo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Steps Expandibles -->
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="proceso-steps">
+                        <!-- Step 1 -->
+                        <div class="proceso-accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="header-left">
+                                    <span class="step-num">01</span>
+                                    <div class="step-icon-small">
+                                        <i class="bi bi-clipboard-data"></i>
+                                    </div>
+                                    <h3 class="accordion-title">Análisis y Diagnóstico</h3>
+                                </div>
+                                <div class="accordion-toggle">
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <p class="accordion-description">
+                                    Evaluamos tu cartera completa con nuestro sistema de scoring avanzado. Clasificamos cada cuenta por nivel de riesgo, antigüedad y perfil del deudor para diseñar estrategias personalizadas que maximicen la recuperación.
+                                </p>
+                                <ul class="accordion-features">
+                                    <li><i class="bi bi-check-circle-fill"></i> Análisis de morosidad y segmentación</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Scoring crediticio en tiempo real</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Identificación de patrones de pago</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="proceso-accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="header-left">
+                                    <span class="step-num">02</span>
+                                    <div class="step-icon-small">
+                                        <i class="bi bi-gear"></i>
+                                    </div>
+                                    <h3 class="accordion-title">Implementación de Estrategia</h3>
+                                </div>
+                                <div class="accordion-toggle">
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <p class="accordion-description">
+                                    Activamos campañas de cobranza multicanal adaptadas a cada perfil. Nuestro sistema automatizado ejecuta las acciones en el momento óptimo a través de email, SMS, WhatsApp y llamadas telefónicas.
+                                </p>
+                                <ul class="accordion-features">
+                                    <li><i class="bi bi-check-circle-fill"></i> Comunicación multicanal automatizada</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Recordatorios inteligentes programados</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Follow-up personalizado por perfil</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="proceso-accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="header-left">
+                                    <span class="step-num">03</span>
+                                    <div class="step-icon-small">
+                                        <i class="bi bi-handshake"></i>
+                                    </div>
+                                    <h3 class="accordion-title">Negociación y Acuerdos</h3>
+                                </div>
+                                <div class="accordion-toggle">
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <p class="accordion-description">
+                                    Nuestro equipo especializado negocia acuerdos de pago viables que benefician a ambas partes. Facilitamos convenios con firma electrónica, planes flexibles y opciones de pago programado.
+                                </p>
+                                <ul class="accordion-features">
+                                    <li><i class="bi bi-check-circle-fill"></i> Planes de pago personalizados</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Firma electrónica de convenios</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Seguimiento automático de compromisos</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="proceso-accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="header-left">
+                                    <span class="step-num">04</span>
+                                    <div class="step-icon-small">
+                                        <i class="bi bi-graph-up-arrow"></i>
+                                    </div>
+                                    <h3 class="accordion-title">Monitoreo y Reportes</h3>
+                                </div>
+                                <div class="accordion-toggle">
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <p class="accordion-description">
+                                    Monitoreamos cada pago y compromiso en tiempo real. Recibes reportes detallados con métricas de recuperación, estatus de cada cuenta y proyecciones de flujo de efectivo actualizadas constantemente.
+                                </p>
+                                <ul class="accordion-features">
+                                    <li><i class="bi bi-check-circle-fill"></i> Dashboard en tiempo real 24/7</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Reportes automáticos programados</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Alertas y notificaciones instantáneas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="proceso-cta-bottom" data-aos="fade-up">
+                        <a href="#contacto" class="btn-cta-proceso">
+                            <i class="bi bi-calendar-check"></i>
+                            Solicitar diagnóstico gratuito
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="beneficios" class="content-section bg-light">
+
+    <!-- Sección CTA - ¿Listo para Recuperar? -->
+    <section id="cta-recuperacion" class="cta-section">
         <div class="container">
-            <h2 class="section-title">Beneficios</h2>
-            <p>Contenido de la sección Beneficios...</p>
+            <div class="cta-content text-center" data-aos="fade-up">
+                <h2 class="cta-title">¿Listo para Recuperar tu Cartera?</h2>
+                <p class="cta-description">
+                    Agenda una consultoría gratuita y descubre cuánto puedes recuperar<br>
+                    con el respaldo de un despacho profesional.
+                </p>
+                <a href="#contacto" class="btn-cta-main">
+                    <i class="bi bi-calendar-check"></i>
+                    Solicitar diagnóstico sin costo
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="contacto" class="content-section">
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contacto-section">
         <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <p>Contenido de la sección Contacto...</p>
+            <!-- Título de la sección -->
+            <div class="contacto-header text-center" data-aos="fade-up">
+                <h2 class="section-title-main">Contáctanos</h2>
+                <p class="contacto-subtitle">
+                    Estamos listos para ayudarte a recuperar tu cartera. Escríbenos y te responderemos<br>
+                    en menos de 24 horas.
+                </p>
+            </div>
+
+            <div class="row g-5 align-items-start">
+                <!-- Columna Izquierda: Información de Contacto -->
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contacto-info">
+                        <!-- Oficinas -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">Oficinas</h4>
+                                <p class="info-text">Av. Insurgentes Sur 1234, Col. Del Valle</p>
+                                <p class="info-text">Ciudad de México, CDMX 03100</p>
+                            </div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">Teléfono</h4>
+                                <p class="info-text">+52 (55) 1234-5678</p>
+                                <p class="info-text-small">Lun - Vie: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">Email</h4>
+                                <p class="info-text">contacto@orangebee.com</p>
+                                <p class="info-text">soporte@orangebee.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Horario -->
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="bi bi-clock-fill"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4 class="info-title">Horario de Atención</h4>
+                                <p class="info-text">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                                <p class="info-text">Sábados: 10:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+
+                        <!-- Redes Sociales -->
+                        <div class="contacto-social">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Formulario de Contacto -->
+                <div class="col-lg-7" data-aos="fade-left">
+                    <form class="contacto-form" id="contactForm">
+                        <div class="row g-3">
+                            <!-- Nombre -->
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombre completo *</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Juan Pérez" required>
+                            </div>
+
+                            <!-- Empresa -->
+                            <div class="col-md-6">
+                                <label for="empresa" class="form-label">Empresa</label>
+                                <input type="text" class="form-control" id="empresa" placeholder="Tu empresa">
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="email" placeholder="tu@email.com" required>
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label">Teléfono *</label>
+                                <input type="tel" class="form-control" id="telefono" placeholder="+52 (55) 1234-5678" required>
+                            </div>
+
+                            <!-- Mensaje -->
+                            <div class="col-12">
+                                <label for="mensaje" class="form-label">¿Cómo podemos ayudarte? *</label>
+                                <textarea class="form-control" id="mensaje" rows="5" placeholder="Cuéntanos sobre tu situación..." required></textarea>
+                            </div>
+
+                            <!-- Botón Enviar -->
+                            <div class="col-12">
+                                <button type="submit" class="btn-form-submit">
+                                    <i class="bi bi-send-fill"></i>
+                                    Enviar mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row g-4">
+                    <!-- Columna 1: Información de OrangeBee -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <h3 class="footer-brand">
+                                <span class="brand-orange-text">Orange</span><span class="brand-bee-text">Bee</span>
+                            </h3>
+                            <p class="footer-description">
+                                Despacho profesional de cobranza con más de 15 años recuperando cartera con ética, tecnología y resultados comprobados.
+                            </p>
+                            <div class="footer-social">
+                                <a href="#" class="footer-social-link" aria-label="Facebook">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                                <a href="#" class="footer-social-link" aria-label="Instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" class="footer-social-link" aria-label="WhatsApp">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Servicios -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="footer-title">Servicios</h4>
+                            <ul class="footer-links">
+                                <li><a href="#servicios">Cobranza Extrajudicial</a></li>
+                                <li><a href="#servicios">Contact Center</a></li>
+                                <li><a href="#servicios">Visitas de Campo</a></li>
+                                <li><a href="#servicios">Reportería</a></li>
+                                <li><a href="#servicios">Consultoría</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Columna 3: Empresa -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="footer-title">Empresa</h4>
+                            <ul class="footer-links">
+                                <li><a href="#nosotros">Nosotros</a></li>
+                                <li><a href="#proceso">Nuestro Proceso</a></li>
+                                <li><a href="#testimonios">Testimonios</a></li>
+                                <li><a href="#contacto">Contacto</a></li>
+                                <li><a href="#privacidad">Aviso de Privacidad</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Columna 4: Contacto -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="footer-title">Contacto</h4>
+                            <ul class="footer-contact">
+                                <li>
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span>Av. Insurgentes Sur 1234<br>Del Valle, CDMX 03100</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-telephone-fill"></i>
+                                    <span>+52 (55) 1234-5678</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-envelope-fill"></i>
+                                    <span>contacto@orangebee.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="footer-copyright">
+                            © 2024 <span class="brand-orange-text">Orange</span><span class="brand-bee-text">Bee</span>. Todos los derechos reservados.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-legal">
+                            <a href="#privacidad">Aviso de Privacidad</a>
+                            <span class="separator">|</span>
+                            <a href="#terminos">Términos y Condiciones</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
