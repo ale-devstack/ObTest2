@@ -22,6 +22,26 @@ body {
 }
 
 /* ===========================
+   Estilos de Marca OrangeBee
+   =========================== */
+/* Para fondos oscuros/negros - Bee en blanco */
+.brand-orange-text {
+    color: var(--orange-primary);
+    font-weight: 700;
+}
+
+.brand-bee-text {
+    color: var(--white);
+    font-weight: 700;
+}
+
+/* Para fondos claros - Bee en negro */
+.nosotros-section .brand-bee-text,
+.servicios-section .brand-bee-text {
+    color: var(--black);
+}
+
+/* ===========================
    Navbar Estilos Base
    =========================== */
 .navbar {
@@ -69,22 +89,10 @@ body {
 /* Nombre de la Marca */
 .brand-name {
     font-size: 1.2rem;
-    font-weight: 700;
     letter-spacing: -1px;
     transition: transform 0.3s ease;
     display: inline-block;
 }
-
-.brand-orange {
-    color: var(--white);
-    transition: color 0.3s ease;
-}
-
-.brand-bee {
-    color: var(--orange-primary);
-}
-
-/* Orange siempre permanece blanco, incluso al hacer scroll */
 
 /* Hover Effect en Logo y Nombre */
 .navbar-brand:hover .logo-container {
@@ -591,11 +599,11 @@ body {
 }
 
 /* ===========================
-   Sección Servicios
+   Sección Servicios - Estilo AMD
    =========================== */
 .servicios-section {
-    padding: 100px 0;
-    background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding: 100px 0 120px;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
     position: relative;
     overflow: hidden;
 }
@@ -604,9 +612,14 @@ body {
     margin-bottom: 4rem;
 }
 
+.servicios-header .section-title-main,
+.servicios-header .section-subtitle {
+    color: var(--white);
+}
+
 .section-subtitle {
     font-size: 1.1rem;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.7);
     margin-top: 1rem;
     max-width: 600px;
     margin-left: auto;
@@ -616,8 +629,9 @@ body {
 /* Carrusel Container */
 .servicios-carousel-container {
     position: relative;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 60px;
 }
 
 .servicios-carousel {
@@ -625,15 +639,11 @@ body {
     overflow: hidden;
 }
 
-/* Service Cards */
+/* Service Cards - Estilo AMD */
 .service-card {
     display: none;
     opacity: 0;
     transition: opacity 0.6s ease;
-    background: var(--white);
-    border-radius: 24px;
-    padding: 3rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 .service-card.active {
@@ -652,44 +662,77 @@ body {
     }
 }
 
-/* Service Image */
-.service-image {
+.service-card-inner {
     position: relative;
-    border-radius: 24px 0 0 24px;
+    width: 100%;
+    height: 500px;
+    border-radius: 24px;
     overflow: hidden;
-    height: 100%;
-    min-height: 450px;
 }
 
-.service-image img {
+/* Background Image */
+.service-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.service-background img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.5s ease;
 }
 
-.service-card:hover .service-image img {
+.service-card:hover .service-background img {
     transform: scale(1.05);
 }
 
-/* Service Content */
-.service-content {
-    padding: 3rem;
+/* Overlay oscuro */
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    z-index: 2;
+}
+
+/* Content Overlay */
+.service-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    padding: 4rem;
+}
+
+.service-text-content {
+    max-width: 600px;
 }
 
 .service-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--black);
-    margin-bottom: 1.2rem;
-    line-height: 1.3;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .service-description {
-    font-size: 1rem;
-    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.7;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .service-features {
@@ -701,73 +744,85 @@ body {
 .service-features li {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 0.6rem 0;
-    font-size: 0.95rem;
-    color: rgba(0, 0, 0, 0.8);
+    gap: 12px;
+    padding: 0.7rem 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.95);
     font-weight: 500;
 }
 
 .service-features li i {
     color: var(--orange-primary);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     flex-shrink: 0;
 }
 
-/* Carousel Controls */
-.carousel-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2.5rem;
-}
-
-.carousel-btn {
-    width: 40px;
-    height: 40px;
+/* Navigation Buttons - Estilo AMD */
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 2px solid rgba(0, 0, 0, 0.15);
-    background: var(--white);
-    color: var(--black);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    z-index: 10;
 }
 
-.carousel-btn:hover {
+.carousel-nav-btn:hover {
     background: var(--orange-primary);
-    color: var(--white);
     border-color: var(--orange-primary);
-    transform: scale(1.05);
+    transform: translateY(-50%) scale(1.1);
 }
 
+.prev-nav {
+    left: 0;
+}
+
+.next-nav {
+    right: 0;
+}
+
+/* Indicators - Centered Bottom */
 .carousel-indicators {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    gap: 0.8rem;
+    gap: 12px;
     align-items: center;
+    z-index: 10;
 }
 
 .indicator {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .indicator.active {
     width: 40px;
     border-radius: 6px;
     background: var(--orange-primary);
+    border-color: var(--orange-primary);
 }
 
 .indicator:hover {
-    background: var(--orange-hover);
+    background: rgba(255, 85, 0, 0.6);
     transform: scale(1.2);
 }
 
@@ -945,37 +1000,45 @@ body {
     
     /* Servicios Section Tablet */
     .servicios-section {
-        padding: 70px 0;
+        padding: 70px 0 90px;
     }
     
     .servicios-header {
         margin-bottom: 3rem;
     }
     
-    .service-card {
-        padding: 0;
+    .servicios-carousel-container {
+        padding: 0 50px;
     }
     
-    .service-image {
-        height: 350px;
-        border-radius: 24px 24px 0 0;
-        min-height: 350px;
+    .service-card-inner {
+        height: 450px;
     }
     
-    .service-content {
-        padding: 2rem;
+    .service-content-overlay {
+        padding: 3rem 2.5rem;
+    }
+    
+    .service-text-content {
+        max-width: 500px;
     }
     
     .service-title {
-        font-size: 1.6rem;
+        font-size: 2.2rem;
     }
     
     .service-description {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
     
-    .carousel-controls {
-        margin-top: 2rem;
+    .carousel-nav-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .carousel-indicators {
+        bottom: -50px;
     }
 }
 
@@ -1021,8 +1084,25 @@ body {
     }
     
     /* Servicios Section Tablet Medio */
+    .servicios-carousel-container {
+        padding: 0 40px;
+    }
+    
+    .service-card-inner {
+        height: 400px;
+    }
+    
+    .service-content-overlay {
+        padding: 2.5rem 2rem;
+    }
+    
     .service-title {
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+    
+    .service-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -1176,14 +1256,28 @@ body {
         padding: 0;
     }
     
+    .service-card .row {
+        flex-direction: column;
+    }
+    
+    .service-card .row {
+        flex-direction: column;
+        min-height: auto;
+        border-radius: 24px;
+    }
+    
+    .service-card .col-lg-6 {
+        display: block;
+    }
+    
     .service-image {
-        height: 280px;
+        height: 300px;
+        min-height: 300px;
         border-radius: 24px 24px 0 0;
-        min-height: 280px;
     }
     
     .service-content {
-        padding: 1.8rem 1.5rem;
+        padding: 2rem 1.5rem;
     }
     
     .service-title {
@@ -1208,7 +1302,7 @@ body {
     
     .carousel-controls {
         gap: 1.5rem;
-        margin-top: 2rem;
+        margin-top: 2.5rem;
     }
     
     .carousel-btn {
@@ -1255,3 +1349,75 @@ body {
         background-image: url('../img/hero-desktop.webp');
     }
 }
+
+    /* Servicios Section Mobile */
+    .servicios-section {
+        padding: 50px 0 70px;
+    }
+    
+    .servicios-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .servicios-carousel-container {
+        padding: 0 20px;
+    }
+    
+    .service-card-inner {
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .service-content-overlay {
+        padding: 2rem 1.5rem;
+        align-items: flex-start;
+        padding-top: 3rem;
+    }
+    
+    .service-text-content {
+        max-width: 100%;
+    }
+    
+    .service-title {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .service-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    
+    .service-features li {
+        font-size: 0.85rem;
+        padding: 0.5rem 0;
+    }
+    
+    .service-features li i {
+        font-size: 1rem;
+    }
+    
+    .carousel-nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .carousel-indicators {
+        bottom: -45px;
+        gap: 10px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .indicator.active {
+        width: 30px;
+    }
